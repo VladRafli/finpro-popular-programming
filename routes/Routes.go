@@ -1,6 +1,9 @@
 package routes
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/gin-gonic/gin"
+	"finpro/routes/auth"
+)
 
 func Init(router *gin.Engine) {
 	// Initialize the routes
@@ -8,5 +11,5 @@ func Init(router *gin.Engine) {
 }
 
 func initRoutes(router *gin.Engine) {
-	InitAuthRoute(router)
+	auth.InitAuthRoute(router)
 }

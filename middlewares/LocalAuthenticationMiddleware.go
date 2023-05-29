@@ -1,5 +1,7 @@
 package middlewares
 
-func Validate() {
+import "github.com/gin-gonic/gin"
+
+func Validate(c *gin.Context) {
 	// TODO
 }

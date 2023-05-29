@@ -1,8 +1,8 @@
 package main
 
 import (
+	"finpro/routes"
 	"github.com/gin-gonic/gin"
-    "finpro/routes"
 )
 
 func main() {

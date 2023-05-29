@@ -4,5 +4,12 @@ use (
 	./
 	./controllers
 	./middlewares
+	./helper
+	./helper/database
 	./routes
+	./routes/auth
+	./services
+	./services/users
+	./guards
+	./guards/local_auth
 )
