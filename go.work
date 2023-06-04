@@ -1,15 +1,12 @@
 go 1.19
 
 use (
-	./
-	./controllers
-	./middlewares
-	./helper
-	./helper/database
-	./routes
-	./routes/auth
-	./services
-	./services/users
-	./guards
-	./guards/local_auth
+    ./
+    ./database
+    ./database/migrations
+    ./database/seeds
+    ./helpers
+    ./routes
+    ./src/auth/controller
+    ./src/auth/service
 )
