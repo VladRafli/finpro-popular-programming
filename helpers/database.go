@@ -7,7 +7,7 @@ import (
 	"gorm.io/gorm"
 )
 
-// Connect to postgres database
+// Connect to mysql database
 func ConnectDatabase(host string, user string, password string, dbname string) *gorm.DB {
 	dsn := fmt.Sprintf("%s:%s@tcp(%s:3306)/%s?charset=utf8mb4&parseTime=True&loc=Local", user, password, host, dbname)
 

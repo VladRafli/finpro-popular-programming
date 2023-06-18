@@ -12,12 +12,9 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-var (
-	logger = helpers.InitLogger()
-	db     = helpers.ConnectDatabase(os.Getenv("DB_HOST"), os.Getenv("DB_USER"), os.Getenv("DB_PASS"), os.Getenv("DB_NAME"))
-)
-
 func Create(c echo.Context) (interface{}, *echo.HTTPError) {
+	logger := helpers.InitLogger()
+	db     := helpers.ConnectDatabase(os.Getenv("DB_HOST"), os.Getenv("DB_USER"), os.Getenv("DB_PASS"), os.Getenv("DB_NAME"))
 	loggerWithFields := logger.WithFields(logrus.Fields{
 		"method":        c.Request().Method,
 		"url":           c.Request().RequestURI,
@@ -64,6 +61,8 @@ func Create(c echo.Context) (interface{}, *echo.HTTPError) {
 }
 
 func ReadAll(c echo.Context) (interface{}, *echo.HTTPError) {
+	logger := helpers.InitLogger()
+	db     := helpers.ConnectDatabase(os.Getenv("DB_HOST"), os.Getenv("DB_USER"), os.Getenv("DB_PASS"), os.Getenv("DB_NAME"))
 	loggerWithFields := logger.WithFields(logrus.Fields{
 		"method":        c.Request().Method,
 		"url":           c.Request().RequestURI,
@@ -116,6 +115,8 @@ func ReadAll(c echo.Context) (interface{}, *echo.HTTPError) {
 }
 
 func Read(c echo.Context) (interface{}, *echo.HTTPError) {
+	logger := helpers.InitLogger()
+	db     := helpers.ConnectDatabase(os.Getenv("DB_HOST"), os.Getenv("DB_USER"), os.Getenv("DB_PASS"), os.Getenv("DB_NAME"))
 	loggerWithFields := logger.WithFields(logrus.Fields{
 		"method":        c.Request().Method,
 		"url":           c.Request().RequestURI,
@@ -162,6 +163,8 @@ func Read(c echo.Context) (interface{}, *echo.HTTPError) {
 }
 
 func Update(c echo.Context) (interface{}, *echo.HTTPError) {
+	logger := helpers.InitLogger()
+	db     := helpers.ConnectDatabase(os.Getenv("DB_HOST"), os.Getenv("DB_USER"), os.Getenv("DB_PASS"), os.Getenv("DB_NAME"))
 	loggerWithFields := logger.WithFields(logrus.Fields{
 		"method":        c.Request().Method,
 		"url":           c.Request().RequestURI,
@@ -208,6 +211,8 @@ func Update(c echo.Context) (interface{}, *echo.HTTPError) {
 }
 
 func Delete(c echo.Context) (interface{}, *echo.HTTPError) {
+	logger := helpers.InitLogger()
+	db     := helpers.ConnectDatabase(os.Getenv("DB_HOST"), os.Getenv("DB_USER"), os.Getenv("DB_PASS"), os.Getenv("DB_NAME"))
 	loggerWithFields := logger.WithFields(logrus.Fields{
 		"method":        c.Request().Method,
 		"url":           c.Request().RequestURI,

@@ -7,6 +7,7 @@ use (
     ./database/seeds
     ./helpers
     ./routes
+    ./src/middlewares
     ./src/auth/controller
     ./src/auth/service
     ./src/auth/dto

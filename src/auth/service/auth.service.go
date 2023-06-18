@@ -14,12 +14,9 @@ import (
 	"golang.org/x/crypto/bcrypt"
 )
 
-var (
-	logger = helpers.InitLogger()
-	db     = helpers.ConnectDatabase(os.Getenv("DB_HOST"), os.Getenv("DB_USER"), os.Getenv("DB_PASS"), os.Getenv("DB_NAME"))
-)
-
 func Login(c echo.Context) (interface{}, *echo.HTTPError) {
+	logger := helpers.InitLogger()
+	db     := helpers.ConnectDatabase(os.Getenv("DB_HOST"), os.Getenv("DB_USER"), os.Getenv("DB_PASS"), os.Getenv("DB_NAME"))
 	loggerWithFields := logger.WithFields(logrus.Fields{
 		"method":        c.Request().Method,
 		"url":           c.Request().RequestURI,
@@ -80,6 +77,8 @@ func Login(c echo.Context) (interface{}, *echo.HTTPError) {
 }
 
 func Register(c echo.Context) (interface{}, *echo.HTTPError) {
+	logger := helpers.InitLogger()
+	db     := helpers.ConnectDatabase(os.Getenv("DB_HOST"), os.Getenv("DB_USER"), os.Getenv("DB_PASS"), os.Getenv("DB_NAME"))
 	loggerWithFields := logger.WithFields(logrus.Fields{
 		"method":        c.Request().Method,
 		"url":           c.Request().RequestURI,
@@ -120,6 +119,7 @@ func Register(c echo.Context) (interface{}, *echo.HTTPError) {
 }
 
 func Logout(c echo.Context) (interface{}, *echo.HTTPError) {
+	logger := helpers.InitLogger()
 	loggerWithFields := logger.WithFields(logrus.Fields{
 		"method":        c.Request().Method,
 		"url":           c.Request().RequestURI,
