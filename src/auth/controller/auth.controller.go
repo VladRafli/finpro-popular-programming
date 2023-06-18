@@ -41,40 +41,6 @@ func Register(c echo.Context) error {
 	})
 }
 
-func ForgotPassword(c echo.Context) error {
-	data, err := service.ForgotPassword(c)
-
-	if err != nil {
-		return c.JSON(err.Code, echo.Map{
-			"statusCode": err.Code,
-			"message":    err.Message,
-		})
-	}
-
-	return c.JSON(http.StatusCreated, echo.Map{
-		"statusCode": http.StatusCreated,
-		"message":    "Successfully created new user.",
-		"data":       data,
-	})
-}
-
-func ChangePassword(c echo.Context) error {
-	data, err := service.ChangePassword(c)
-
-	if err != nil {
-		return c.JSON(err.Code, echo.Map{
-			"statusCode": err.Code,
-			"message":    err.Message,
-		})
-	}
-
-	return c.JSON(http.StatusCreated, echo.Map{
-		"statusCode": http.StatusCreated,
-		"message":    "Successfully created new user.",
-		"data":       data,
-	})
-}
-
 func Logout(c echo.Context) error {
 	data, err := service.Logout(c)
 

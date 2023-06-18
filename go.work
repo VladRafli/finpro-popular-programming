@@ -9,4 +9,17 @@ use (
     ./routes
     ./src/auth/controller
     ./src/auth/service
+    ./src/auth/dto
+    ./src/rt/controller
+    ./src/rt/service
+    ./src/rt/dto
+    ./src/rw/controller
+    ./src/rw/service
+    ./src/rw/dto
+    ./src/domisili/controller
+    ./src/domisili/service
+    ./src/domisili/dto
+    ./src/penduduk/controller
+    ./src/penduduk/service
+    ./src/penduduk/dto
 )
